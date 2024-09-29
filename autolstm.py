@@ -90,9 +90,9 @@ def predict_future(model, last_sequence, future_days):
     return np.array(future_predictions).reshape(-1, 1)
 
 
-ticker_list = ['PANW','V','ONTO','TSM','SNPS','AMD','NVDA']
-time_steps_list = [10, 20, 30, 40, 50, 60]
-epochs_list = [30,40,50,60,70,80,90,100]
+ticker_list = ['PANW','V','ONTO','TSM','SNPS']
+time_steps_list = [10, 20, 30, 40, 60]
+epochs_list = [30,50,100]
 batch_size_list = [16,32,64]
 
 result = []
@@ -145,4 +145,3 @@ for ticker in ticker_list:
 
 df = pd.DataFrame(result)
 df.to_csv('lstmdata.csv',index=False)
-print(f'lets freaking go baby')
